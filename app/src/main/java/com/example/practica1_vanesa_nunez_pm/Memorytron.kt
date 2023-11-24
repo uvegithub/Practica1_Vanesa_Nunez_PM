@@ -25,8 +25,18 @@ class Memorytron : AppCompatActivity() {
     private lateinit var botonnueva: Button
 
     private lateinit var array_cartas: Array<Int>
+    private lateinit var array_imagenes: MutableList<Int>
+
+    private lateinit var valores: MutableList<Int>
 
     var fin_partida: Boolean = false
+    var comprobando: Boolean = false
+
+    var vidas: Int=5
+
+    var cont_cartas:Int=0
+
+    var contador: Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,27 +62,157 @@ class Memorytron : AppCompatActivity() {
             recreate()
         }
 
-        array_cartas = arrayOf(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6)
-        array_cartas.shuffle()
 
-        for(i in array_cartas.indices){
-            when (array_cartas[i]){
-                1 -> imagen01.setImageResource(R.drawable.c1)
-                2 -> imagen01.setImageResource(R.drawable.c2)
-                3 -> imagen01.setImageResource(R.drawable.c3)
-                4 -> imagen01.setImageResource(R.drawable.c4)
-                5 -> imagen01.setImageResource(R.drawable.c5)
-                6 -> imagen01.setImageResource(R.drawable.c6)
-            }
+        inicializar()
+
+        if (cont_cartas == 2){
+            comprobar(valores)
+            cont_cartas = 0
         }
 
-        var vidas: Int=5
+
+        imagen01.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen01,0)
+                cont_cartas += 1
+                valores.add(array_cartas[0])
+            }
+
+        }
+        imagen02.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen02,1)
+                cont_cartas += 1
+                valores.add(array_cartas[1])
+            }
+
+        }
+        imagen03.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen03,2)
+                cont_cartas += 1
+                valores.add(array_cartas[2])
+            }
+
+        }
+        imagen04.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen04,3)
+                cont_cartas += 1
+                valores.add(array_cartas[3])
+            }
+
+        }
+        imagen05.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen05,4)
+                cont_cartas += 1
+                valores.add(array_cartas[4])
+            }
+
+        }
+        imagen06.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen06,5)
+                cont_cartas += 1
+                valores.add(array_cartas[5])
+            }
+
+        }
+
+        imagen07.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen07,6)
+                cont_cartas += 1
+                valores.add(array_cartas[6])
+            }
+
+        }
+        imagen08.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen08,7)
+                cont_cartas += 1
+                valores.add(array_cartas[7])
+            }
+
+        }
+        imagen09.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen09,8)
+                cont_cartas += 1
+                valores.add(array_cartas[8])
+            }
+
+        }
+        imagen010.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen010,9)
+                cont_cartas += 1
+                valores.add(array_cartas[9])
+            }
+
+        }
+        imagen011.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen011,10)
+                cont_cartas += 1
+                valores.add(array_cartas[10])
+            }
+
+        }
+        imagen012.setOnClickListener {
+            if(!fin_partida && cont_cartas<=2){
+                click_imagen(imagen012,11)
+                cont_cartas += 1
+                valores.add(array_cartas[11])
+            }
+
+        }
 
         if(vidas == 0){
             fin_partida = true
         }
 
+    }
+
+    fun inicializar(){
+        array_cartas = arrayOf(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6)
+        array_imagenes = mutableListOf()
+        valores = mutableListOf()
+        array_cartas.shuffle()
 
 
+        for(i in array_cartas.indices){
+            when (array_cartas[i]){
+                1 -> array_imagenes.add(R.drawable.c1)
+                2 -> array_imagenes.add(R.drawable.c2)
+                3 -> array_imagenes.add(R.drawable.c3)
+                4 -> array_imagenes.add(R.drawable.c4)
+                5 -> array_imagenes.add(R.drawable.c5)
+                6 -> array_imagenes.add(R.drawable.c6)
+            }
+        }
+    }
+
+    fun click_imagen(imagen:ImageView, idex_carta:Int){
+        imagen.setImageResource(array_imagenes.get(array_cartas[idex_carta]))
+    }
+
+    fun comprobar(valor: MutableList<Int>){
+//        var pareja:Boolean = false
+
+        if(valor[0] == valor[1]){
+//            pareja = true
+            contador += 1
+            valores = mutableListOf()
+        }else {
+//            pareja = false
+            vidas -= 1
+            valores = mutableListOf()
+        }
+
+        if (contador == 6){
+            fin_partida = true
+        }
     }
 }
