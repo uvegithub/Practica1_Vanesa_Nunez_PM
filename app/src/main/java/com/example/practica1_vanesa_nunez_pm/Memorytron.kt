@@ -3,6 +3,9 @@ package com.example.practica1_vanesa_nunez_pm
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -30,13 +33,15 @@ class Memorytron : AppCompatActivity() {
     private lateinit var valores: MutableList<Int>
 
     var fin_partida: Boolean = false
-    var comprobando: Boolean = false
+    var pareja: Boolean = false
 
     var vidas: Int=5
 
-    var cont_cartas:Int=0
+    var contador_parejas: Int=0
 
-    var contador: Int=0
+    var dar_vuelta: Boolean = false
+
+    private lateinit var imagen_primera: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,112 +70,247 @@ class Memorytron : AppCompatActivity() {
 
         inicializar()
 
-        if (cont_cartas == 2){
-            comprobar(valores)
-            cont_cartas = 0
-        }
+//        if (cont_cartas == 2){
+//            comprobar(valores)
+//            cont_cartas = 0
+//        }
 
 
         imagen01.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen01,0)
-                cont_cartas += 1
+//                cont_cartas += 1
                 valores.add(array_cartas[0])
-            }
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen01.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
 
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen01
+                }
+            }
         }
         imagen02.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen02,1)
-                cont_cartas += 1
                 valores.add(array_cartas[1])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen02.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen02
+                }
             }
-
         }
         imagen03.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen03,2)
-                cont_cartas += 1
                 valores.add(array_cartas[2])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen03.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen03
+                }
             }
-
         }
         imagen04.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen04,3)
-                cont_cartas += 1
                 valores.add(array_cartas[3])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen04.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen04
+                }
             }
-
         }
         imagen05.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen05,4)
-                cont_cartas += 1
                 valores.add(array_cartas[4])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen05.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen04
+                }
             }
-
         }
         imagen06.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen06,5)
-                cont_cartas += 1
                 valores.add(array_cartas[5])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen06.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen06
+                }
             }
-
         }
 
         imagen07.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen07,6)
-                cont_cartas += 1
                 valores.add(array_cartas[6])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen07.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen07
+                }
             }
-
         }
         imagen08.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen08,7)
-                cont_cartas += 1
                 valores.add(array_cartas[7])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen08.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen08
+                }
             }
-
         }
         imagen09.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen09,8)
-                cont_cartas += 1
                 valores.add(array_cartas[8])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen09.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen09
+                }
             }
-
         }
         imagen010.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen010,9)
-                cont_cartas += 1
                 valores.add(array_cartas[9])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen010.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen010
+                }
             }
-
         }
         imagen011.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen011,10)
-                cont_cartas += 1
                 valores.add(array_cartas[10])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen011.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen011
+                }
             }
-
         }
         imagen012.setOnClickListener {
-            if(!fin_partida && cont_cartas<=2){
+            if(!fin_partida){
                 click_imagen(imagen012,11)
-                cont_cartas += 1
                 valores.add(array_cartas[11])
+                if(valores.size==2){
+                    comprobar_parejas(valores)
+                    if(!pareja){
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            imagen012.setImageResource(R.drawable.c0)
+                            imagen_primera.setImageResource(R.drawable.c0)
+                        },3000)
+                    }else{
+                        comprobar_finpartida()
+                    }
+                }else{
+                    imagen_primera = imagen012
+                }
             }
-
         }
 
         if(vidas == 0){
             fin_partida = true
+            textoganar.text="HAS PERDIDO"
         }
 
     }
@@ -192,27 +332,33 @@ class Memorytron : AppCompatActivity() {
                 6 -> array_imagenes.add(R.drawable.c6)
             }
         }
+
+        Log.v("arrayCartas", array_cartas.toString())
+        Log.v("arrayImagenes", array_imagenes.toString())
     }
 
     fun click_imagen(imagen:ImageView, idex_carta:Int){
         imagen.setImageResource(array_imagenes.get(array_cartas[idex_carta]))
     }
 
-    fun comprobar(valor: MutableList<Int>){
-//        var pareja:Boolean = false
+    fun comprobar_parejas(valor: MutableList<Int>){
 
         if(valor[0] == valor[1]){
-//            pareja = true
-            contador += 1
+            pareja = true
+            contador_parejas += 1
             valores = mutableListOf()
         }else {
-//            pareja = false
+            pareja = false
             vidas -= 1
             valores = mutableListOf()
+            dar_vuelta = true
         }
+    }
 
-        if (contador == 6){
+    fun comprobar_finpartida(){
+        if (contador_parejas == 6){
             fin_partida = true
+            textoganar.text = "HAS GANADO"
         }
     }
 }
