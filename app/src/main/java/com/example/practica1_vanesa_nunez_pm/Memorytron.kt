@@ -193,7 +193,7 @@ class Memorytron : AppCompatActivity() {
                         comprobar_finpartida()
                     }
                 }else{
-                    imagen_primera = imagen04
+                    imagen_primera = imagen05
                 }
             }
         }
