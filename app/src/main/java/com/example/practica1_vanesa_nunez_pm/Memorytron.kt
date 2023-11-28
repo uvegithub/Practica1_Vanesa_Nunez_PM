@@ -68,7 +68,27 @@ class Memorytron : AppCompatActivity() {
         }
 
 
-        inicializar()
+//        inicializar()
+
+        array_cartas = arrayOf(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6)
+        array_imagenes = mutableListOf()
+        valores = mutableListOf()
+        array_cartas.shuffle()
+
+
+        for(i in array_cartas.indices){
+            when (array_cartas[i]){
+                1 -> array_imagenes.add(R.drawable.c1)
+                2 -> array_imagenes.add(R.drawable.c2)
+                3 -> array_imagenes.add(R.drawable.c3)
+                4 -> array_imagenes.add(R.drawable.c4)
+                5 -> array_imagenes.add(R.drawable.c5)
+                6 -> array_imagenes.add(R.drawable.c6)
+            }
+        }
+
+//        Log.v("arrayCartas", array_cartas.toString())
+//        Log.v("arrayImagenes", array_imagenes.toString())
 
 //        if (cont_cartas == 2){
 //            comprobar(valores)
@@ -88,7 +108,7 @@ class Memorytron : AppCompatActivity() {
                             imagen01.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
-
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -108,6 +128,7 @@ class Memorytron : AppCompatActivity() {
                             imagen02.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -127,6 +148,7 @@ class Memorytron : AppCompatActivity() {
                             imagen03.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -146,6 +168,7 @@ class Memorytron : AppCompatActivity() {
                             imagen04.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -165,6 +188,7 @@ class Memorytron : AppCompatActivity() {
                             imagen05.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -184,6 +208,7 @@ class Memorytron : AppCompatActivity() {
                             imagen06.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -204,6 +229,7 @@ class Memorytron : AppCompatActivity() {
                             imagen07.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -223,6 +249,7 @@ class Memorytron : AppCompatActivity() {
                             imagen08.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -242,6 +269,7 @@ class Memorytron : AppCompatActivity() {
                             imagen09.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -261,6 +289,7 @@ class Memorytron : AppCompatActivity() {
                             imagen010.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -280,6 +309,7 @@ class Memorytron : AppCompatActivity() {
                             imagen011.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -299,6 +329,7 @@ class Memorytron : AppCompatActivity() {
                             imagen012.setImageResource(R.drawable.c0)
                             imagen_primera.setImageResource(R.drawable.c0)
                         },3000)
+                        comprobar_vidas()
                     }else{
                         comprobar_finpartida()
                     }
@@ -308,33 +339,10 @@ class Memorytron : AppCompatActivity() {
             }
         }
 
-        if(vidas == 0){
-            fin_partida = true
-            textoganar.text="HAS PERDIDO"
-        }
-
     }
 
     fun inicializar(){
-        array_cartas = arrayOf(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6)
-        array_imagenes = mutableListOf()
-        valores = mutableListOf()
-        array_cartas.shuffle()
 
-
-        for(i in array_cartas.indices){
-            when (array_cartas[i]){
-                1 -> array_imagenes.add(R.drawable.c1)
-                2 -> array_imagenes.add(R.drawable.c2)
-                3 -> array_imagenes.add(R.drawable.c3)
-                4 -> array_imagenes.add(R.drawable.c4)
-                5 -> array_imagenes.add(R.drawable.c5)
-                6 -> array_imagenes.add(R.drawable.c6)
-            }
-        }
-
-        Log.v("arrayCartas", array_cartas.toString())
-        Log.v("arrayImagenes", array_imagenes.toString())
     }
 
     fun click_imagen(imagen:ImageView, idex_carta:Int){
@@ -359,6 +367,13 @@ class Memorytron : AppCompatActivity() {
         if (contador_parejas == 6){
             fin_partida = true
             textoganar.text = "HAS GANADO"
+        }
+    }
+
+    fun comprobar_vidas(){
+        if(vidas == 0){
+            fin_partida = true
+            textoganar.text="HAS PERDIDO"
         }
     }
 }
