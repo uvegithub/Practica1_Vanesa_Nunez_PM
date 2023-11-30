@@ -87,8 +87,8 @@ class Memorytron : AppCompatActivity() {
             }
         }
 
-//        Log.v("arrayCartas", array_cartas.toString())
-//        Log.v("arrayImagenes", array_imagenes.toString())
+        Log.v("arrayCartas", array_cartas.toString())
+        Log.v("arrayImagenes", array_imagenes.toString())
 
 //        if (cont_cartas == 2){
 //            comprobar(valores)

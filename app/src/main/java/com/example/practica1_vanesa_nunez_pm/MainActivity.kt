@@ -15,4 +15,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, Memorytron::class.java)
         startActivity(intent)
     }
+
+    fun iniciarActividadcalculator (view : View){
+        val intent = Intent(this, Calculatron::class.java)
+        startActivity(intent)
+    }
 }

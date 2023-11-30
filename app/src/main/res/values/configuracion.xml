@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <Int name="duracion">20</Int>
+    <String name="animacion">"Sin animaciones"</String>
+    <Int name="maximo">10</Int>
+    <Char name="operador">+</Char>
+    <Int name="minimo">0</Int>
+</resources>
