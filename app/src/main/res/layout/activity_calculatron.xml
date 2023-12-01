@@ -6,4 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".Calculatron">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cuentaatras"
+        android:text="Cuenta atras"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="20dp"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/acertadas"
+        android:text="Acertadas: "
+        app:layout_constraintTop_toBottomOf="@id/cuentaatras"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/falladas"
+        android:text="Falladas: "
+        app:layout_constraintTop_toBottomOf="@id/acertadas"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/canterior"
+        android:text="cuenta anterior: "
+        app:layout_constraintTop_toBottomOf="@id/falladas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cactual"
+        android:text="cuenta actual: "
+        app:layout_constraintTop_toBottomOf="@id/canterior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="30dp"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cnext"
+        android:text="cuenta siguiente: "
+        app:layout_constraintTop_toBottomOf="@id/cactual"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="30dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

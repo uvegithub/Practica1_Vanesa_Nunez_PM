@@ -41,11 +41,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="NotSibling" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cuentares"
-                android:text=""
+                android:hint="Ingresa la cuenta atrás"
                 app:layout_constraintTop_toBottomOf="@id/cuenta"
                 app:layout_constraintStart_toStartOf="parent"/>
 
@@ -213,7 +213,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/anima"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:spinnerMode="dropdown"/>
 
     <Button
         android:id="@+id/bsuma"

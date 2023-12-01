@@ -97,6 +97,8 @@ class Memorytron : AppCompatActivity() {
 
 
         imagen01.setOnClickListener {
+
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen01,0)
 //                cont_cartas += 1
@@ -118,6 +120,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen02.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen02,1)
                 valores.add(array_cartas[1])
@@ -138,6 +141,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen03.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen03,2)
                 valores.add(array_cartas[2])
@@ -158,6 +162,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen04.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen04,3)
                 valores.add(array_cartas[3])
@@ -178,6 +183,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen05.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen05,4)
                 valores.add(array_cartas[4])
@@ -198,6 +204,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen06.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen06,5)
                 valores.add(array_cartas[5])
@@ -219,6 +226,7 @@ class Memorytron : AppCompatActivity() {
         }
 
         imagen07.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen07,6)
                 valores.add(array_cartas[6])
@@ -239,6 +247,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen08.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen08,7)
                 valores.add(array_cartas[7])
@@ -259,6 +268,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen09.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen09,8)
                 valores.add(array_cartas[8])
@@ -279,6 +289,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen010.setOnClickListener {
+            returnArray()
             if(!fin_partida){
                 click_imagen(imagen010,9)
                 valores.add(array_cartas[9])
@@ -341,12 +352,27 @@ class Memorytron : AppCompatActivity() {
 
     }
 
+    fun returnArray(): Unit{
+        var stringggg: String = ""
+        var stringggg2: String = ""
+
+        for (carta in array_cartas){
+            stringggg += " ${carta.toString()} "
+        }
+        for (imagen in array_imagenes){
+            stringggg2 += " ${imagen.toString()} "
+        }
+        array_imagenes
+
+        Log.v("array",stringggg)
+        Log.v("arrayimagenes",stringggg2)
+    }
     fun inicializar(){
 
     }
 
     fun click_imagen(imagen:ImageView, idex_carta:Int){
-        imagen.setImageResource(array_imagenes.get(array_cartas[idex_carta]))
+        imagen.setImageResource(array_imagenes[array_cartas[idex_carta]])
     }
 
     fun comprobar_parejas(valor: MutableList<Int>){
