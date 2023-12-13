@@ -97,8 +97,8 @@ class Memorytron : AppCompatActivity() {
 
 
         imagen01.setOnClickListener {
-
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen01,0)
 //                cont_cartas += 1
@@ -121,6 +121,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen02.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen02,1)
                 valores.add(array_cartas[1])
@@ -142,6 +143,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen03.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen03,2)
                 valores.add(array_cartas[2])
@@ -163,6 +165,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen04.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen04,3)
                 valores.add(array_cartas[3])
@@ -184,6 +187,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen05.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen05,4)
                 valores.add(array_cartas[4])
@@ -205,6 +209,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen06.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen06,5)
                 valores.add(array_cartas[5])
@@ -227,6 +232,7 @@ class Memorytron : AppCompatActivity() {
 
         imagen07.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen07,6)
                 valores.add(array_cartas[6])
@@ -248,6 +254,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen08.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen08,7)
                 valores.add(array_cartas[7])
@@ -269,6 +276,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen09.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen09,8)
                 valores.add(array_cartas[8])
@@ -290,6 +298,7 @@ class Memorytron : AppCompatActivity() {
         }
         imagen010.setOnClickListener {
             returnArray()
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen010,9)
                 valores.add(array_cartas[9])
@@ -310,6 +319,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen011.setOnClickListener {
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen011,10)
                 valores.add(array_cartas[10])
@@ -330,6 +340,7 @@ class Memorytron : AppCompatActivity() {
             }
         }
         imagen012.setOnClickListener {
+            comprobar_finpartida()
             if(!fin_partida){
                 click_imagen(imagen012,11)
                 valores.add(array_cartas[11])

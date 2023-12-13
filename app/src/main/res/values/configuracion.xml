@@ -8,4 +8,5 @@
     <string name="operador">+</string>
     <string name="operador2">-</string>
     <integer name="minimo">0</integer>
+
 </resources>
