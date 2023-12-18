@@ -6,4 +6,158 @@
     android:layout_height="match_parent"
     tools:context=".Calculatron_resumen">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/texto1"
+        android:text="Partida anterior"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="20dp"
+        android:textSize="22dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/acer"
+        android:text="acertadas"
+        app:layout_constraintTop_toBottomOf="@id/texto1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/acer_res"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/acer_res"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/texto1"
+        app:layout_constraintStart_toEndOf="@id/acer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fall"
+        android:text="falladas"
+        app:layout_constraintTop_toBottomOf="@id/acer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/acer_res"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fall_res"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/acer_res"
+        app:layout_constraintStart_toEndOf="@id/fall"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/por"
+        android:text="porcentaje de aciertos:"
+        app:layout_constraintTop_toBottomOf="@id/fall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/por_res"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/por_res"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/fall_res"
+        app:layout_constraintStart_toEndOf="@id/por"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/texto2"
+        android:text="Total"
+        app:layout_constraintTop_toTopOf="@id/por"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="30dp"
+        android:textSize="22dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/acer_tot"
+        android:text="acertadas"
+        app:layout_constraintTop_toBottomOf="@id/texto2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/acer_res_tot"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/acer_res_tot"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/texto2"
+        app:layout_constraintStart_toEndOf="@id/acer_tot"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fall_tot"
+        android:text="falladas"
+        app:layout_constraintTop_toBottomOf="@id/acer_tot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/fall_res_tot"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fall_res_tot"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/acer_res_tot"
+        app:layout_constraintStart_toEndOf="@id/fall_tot"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/por_tot"
+        android:text="porcentaje de aciertos:"
+        app:layout_constraintTop_toBottomOf="@id/fall_tot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/por_res_tot"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/por_res_tot"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/fall_res_tot"
+        app:layout_constraintStart_toEndOf="@id/por_tot"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="10dp"
+        android:textSize="18dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun iniciarActividadcalculator_configuracion (view : View){
-        val intent = Intent(this, Calculatron_resumen::class.java)
+        val intent = Intent(this, ConfiguracionC::class.java)
         startActivity(intent)
     }
 }

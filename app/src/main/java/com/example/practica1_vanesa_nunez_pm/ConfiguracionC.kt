@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +26,12 @@ class ConfiguracionC : AppCompatActivity() {
     lateinit var c_atras: EditText
     lateinit var minimo: EditText
     lateinit var maximo: EditText
+
+    lateinit var checksuma: CheckBox
+    lateinit var checkresta: CheckBox
+    lateinit var checkmultiplica: CheckBox
+
+//    lateinit var bguardar:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,17 +51,31 @@ class ConfiguracionC : AppCompatActivity() {
         minimo=findViewById<EditText>(R.id.minimores)
         maximo=findViewById<EditText>(R.id.maximores)
 
-
     }
 
     fun iniciarActividadcalculator (view : View){
+
+        checksuma=findViewById(R.id.checkBox)
+        checkresta=findViewById(R.id.checkBox2)
+        checkmultiplica=findViewById(R.id.checkBox3)
+
+        var operador:String=""
+
+        if(checksuma.isChecked){
+            operador="+"
+        }else if(checkresta.isChecked){
+            operador="-"
+        }else if(checkmultiplica.isChecked){
+            operador="*"
+        }
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
 
         sharedPreferences.edit {
             putString("duracion",c_atras.text.toString())
-            putString("maximo", minimo.text.toString())
-            putString("minimo", maximo.text.toString())
+            putString("maximo", maximo.text.toString())
+            putString("minimo", minimo.text.toString())
+            putString("operador", operador)
         }
 
         val intent = Intent(this, Calculatron::class.java)
